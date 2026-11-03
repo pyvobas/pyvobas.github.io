@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pyvobas — Software development and digital solutions.">
+<title>Pyvobas | Software Development</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    color: #172033;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+header {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #edf0f4;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #173b72;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #526075;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #2865b5;
+}
+
+.hero {
+    background: #f5f8fc;
+    padding: 120px 0 115px;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.tag {
+    color: #2865b5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+    margin-bottom: 25px;
+    color: #142b4d;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    background: #245da6;
+    color: white;
+    padding: 14px 27px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.btn:hover {
+    background: #17477f;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.section-label {
+    color: #2865b5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 38px;
+    letter-spacing: -1px;
+    color: #172e50;
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    max-width: 650px;
+    color: #718096;
+    font-size: 16px;
+}
+
+.services {
+    background: #fff;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.service-card {
+    padding: 32px;
+    border: 1px solid #e9edf3;
+    border-radius: 5px;
+    transition: .25s;
+}
+
+.service-card:hover {
+    border-color: #b9cee9;
+    transform: translateY(-4px);
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    background: #edf4fc;
+    color: #245da6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.service-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+    color: #203654;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #718096;
+}
+
+.about {
+    background: #f5f8fc;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-text p {
+    color: #718096;
+    margin-bottom: 18px;
+}
+
+.about-visual {
+    background: #173b72;
+    min-height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.expertise-item {
+    padding: 23px;
+    background: #f5f8fc;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #29476e;
+    font-size: 15px;
+}
+
+.contact {
+    background: #173b72;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    color: white;
+}
+
+.contact p {
+    color: #c5d4e8;
+    max-width: 550px;
+    margin: 0 auto 30px;
+}
+
+.contact .btn {
+    background: white;
+    color: #173b72;
+}
+
+footer {
+    padding: 28px 0;
+    border-top: 1px solid #edf0f4;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8793a5;
+    font-size: 13px;
+}
+
+@media(max-width: 768px) {
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 85px 0;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media(max-width: 420px) {
+    .nav-links {
+        gap: 9px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">pyvobas.</div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="tag">Software & Digital Solutions</div>
+
+            <h1>Building digital solutions for a connected world.</h1>
+
+            <p>
+                Pyvobas explores modern software engineering,
+                digital transformation and technology-driven
+                approaches to business challenges.
+            </p>
+
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="container">
+
+        <div class="section-label">What We Do</div>
+        <h2>Our Services</h2>
+
+        <p class="section-intro">
+            A range of technology disciplines focused on
+            creating practical, scalable digital solutions.
+        </p>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <div class="service-icon">⌘</div>
+                <h3>Custom Software</h3>
+                <p>
+                    Software architecture, application concepts
+                    and tailored digital product development.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">◇</div>
+                <h3>Web Development</h3>
+                <p>
+                    Modern web technologies, responsive interfaces
+                    and user-focused digital experiences.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">◎</div>
+                <h3>IT Consulting</h3>
+                <p>
+                    Technology strategy, digital architecture
+                    and software planning.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+
+            <div class="about-text">
+                <div class="section-label">About Pyvobas</div>
+                <h2>Technology with purpose.</h2>
+
+                <p>
+                    Pyvobas is a technology-focused project
+                    exploring the intersection of software,
+                    innovation and digital business.
+                </p>
+
+                <p>
+                    Our approach emphasizes thoughtful design,
+                    maintainable architecture and practical
+                    technology choices.
+                </p>
+            </div>
+
+            <div class="about-visual">
+                PYVOBAS
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="expertise">
+    <div class="container">
+        <div class="section-label">Technology</div>
+        <h2>Areas of Expertise</h2>
+
+        <p class="section-intro">
+            Technologies and disciplines relevant to
+            contemporary software development.
+        </p>
+
+        <div class="expertise-grid">
+            <div class="expertise-item">Web Technologies</div>
+            <div class="expertise-item">Cloud Computing</div>
+            <div class="expertise-item">UI / UX Design</div>
+            <div class="expertise-item">Backend Systems</div>
+            <div class="expertise-item">API Development</div>
+            <div class="expertise-item">Data Solutions</div>
+            <div class="expertise-item">Software Architecture</div>
+            <div class="expertise-item">Digital Strategy</div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-label" style="color:#a9c9f2">
+            Get in Touch
+        </div>
+
+        <h2>Let's talk technology.</h2>
+
+        <p>
+            Interested in software, digital products
+            or exploring a new technology concept?
+        </p>
+
+        <a href="mailto:YOUR_EMAIL_HERE" class="btn">
+            Contact Us
+        </a>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="logo">pyvobas.</div>
+            <div>© 2026 Pyvobas. All rights reserved.</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
